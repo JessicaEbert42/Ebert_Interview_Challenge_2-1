@@ -20,8 +20,9 @@ Feature: I can fill out all the supported fields for api mail method on the Send
     Then the Response Body should contain '"message": "success"'
 
   Scenario: I fill out the fields and send an email with pre-defined values using the html field for the email body
-    Given "that I have navigated to the SendGrid api_workshop and have valid values for each field"
-    When I expand the mail endpoint
+    Given I navigate to the SendGrid api_workshop with a list of valid values for each field
+    When I enter my credentials "jessicaEbert" "Password123"
+	And I expand the mail endpoint
 	And I enter "jessicaebert42@gmail.com" as the to email address
 	And I enter "Jessica Ebert" as the toname
 	And I enter { "category": "newuser"} as the x-smtpapi
